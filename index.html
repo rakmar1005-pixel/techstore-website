@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Магазин електроніки</title>
+	<style> /* css код */
+		body{
+	font-family: Arial, sans-serif;
+	margin: 0;
+    padding: 0;
+}
+nav a{
+	text-decoration: none;
+    margin-right: 15px;
+}
+.product-card{
+	border: 2px solid;
+}
+footer{
+	background-color: black;
+	color: white;
+}
+/* Додай ці стилі до існуючих */
+
+header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: #333;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+section {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.product-card {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px;
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.price {
+    color: #e44d26;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+}
+
+.footer-info, .footer-links {
+    margin: 10px;
+}
+ul{
+	padding-left: 20px;
+}
+.cart-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item button {
+    width: auto;
+    padding: 5px 10px;
+    background-color: #dc3545;
+}
+
+.cart-item button:hover {
+    background-color: #c82333;
+}
+
+#clear-cart {
+    background-color: #dc3545;
+    width: auto;
+    margin-top: 20px;
+}
+
+#clear-cart:hover {
+    background-color: #c82333;
+}
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        margin: 5px 0;
+        width: 80%;
+        text-align: center;
+    }
+    
+    .product-card {
+        width: 90%;
+        margin: 10px auto;
+        display: block;
+    }
+    
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-info, .footer-links {
+        margin: 15px 0;
+    }
+}
+	</style>
+
+</head>
+<body>
+	<header>
+		<h1>TechStore</h1>
+		<nav>
+			<a href="#home" class="">Головна</a>
+			<a href="#catalog">Каталог</a>
+			<a href="#about">Про нас</a>
+			<a href="#contacts">Контакти</a>
+			<a href="#cart">Кошик (<span id="cart-count">0</span>)</a>
+		</nav>
+	</header>
+	<main>
+		<section id="home"><!--Головна-->
+			<h2>Ласкаво просимо до TechStore!</h2>
+		</section>
+		<section id="catalog"><!-- Каталог товарів-->
+			<h2>Наші товари</h2>
+			<div class="products">
+				<div class="product-card">
+				<img src="https://placehold.co/300x200" alt="Телефон">
+				<h3>Телефон Apple</h3>
+				<p>Надзвичайно швидкий чип забезпечує роботу таких передових процесів, як обробка фотографій, плавне відображення Dynamic Island і режим «Ізоляція голосу» під час викликів.</p>
+				<p class="price">40000₴</p>
+				<button>Купити</button>
+				</div>
+				<div class="product-card">
+					<img src="https://placehold.co/300x200" alt="Навушники">
+					<h3>Навушники Apple</h3>
+					<p>AirPods 4 з активним поглинанням шуму — це вдосконалене звучання з адаптивним аудіо та режимом проникності, а також оновлений розмір для комфорту на весь день.</p>
+					<p class="price">9800₴</p>
+					<button>Купити</button>
+				</div>
+				<div class="product-card">
+					<img src="https://placehold.co/300x200" alt="Ноутбук">
+					<h3>Ноутбук Apple</h3>
+					<p>	MacBook Air — найтонший і найлегший ноутбук від Apple.
+						А тепер завдяки чипу Apple M1 він іще й надпотужний.
+						Цей чип забезпечив грандіозний прорив у продуктивності центрального й графічного процесорів.</p>
+						<p class="price">33000₴</p>
+						<button>Купити</button>
+				</div>
+				<div class="search-container">
+    				<input type="text" id="search" placeholder="Пошук товарів...">
+				</div>
+			</div>
+		</section>
+		<section id="cart">
+    		<h2>Кошик покупок</h2>
+    		<div id="cart-items">
+        		<p>Ваш кошик порожній</p>
+    		</div>
+    		<button id="clear-cart" style="display: none;">Очистити кошик</button>
+		</section>
+		<section id="about"><!-- Про магазин-->
+			<h2>Про наш магазин</h2>
+			<p><b>TechStore</b> — це сучасний онлайн-магазин електроніки та аксесуарів для щоденного використання, роботи й розваг. У нашому асортименті представлена перевірена техніка від надійних брендів за конкурентними цінами. Ми забезпечуємо зручний процес замовлення, швидку доставку та професійну підтримку клієнтів. TechStore орієнтується на якість, актуальні технології та комфорт кожного покупця.</p>
+			<ul>
+				<li>Широкий вибір сучасної техніки та аксесуарів</li>
+				<li>Гарантія якості та співпраця з надійними постачальниками</li>
+				<li>Швидка доставка та зручні способи оплати</li>
+				<li>Професійна консультація та підтримка клієнтів</li>
+			</ul>
+		</section>
+		<section id="contacts"><!-- Контактна інформація-->
+			<h2>Контактна інформація</h2>
+			<form>
+				<label for="name">Ім'я користувача</label><br>
+				<input type="text" name="name" id="name" required><br><br>
+				<label for="email">Email</label><br>
+				<input type="email" id="email" name="Email" required><br><br>
+				<label for="message">Повідомлення</label><br>
+				<textarea name="message" id="message" rows="4" required></textarea><br><br>
+				<button type="submit">Надіслати</button>
+			</form>
+		</section>
+	</main>
+	<footer><!-- Низ сайту-->
+		<div class="footer-info">
+		<p>© 2023 TechStore</p>
+		<p>Магазин електроніки</p>
+		</div>
+		<div class="footer-links">
+			<a href="#">Політика конфеденційнсті</a>
+			<a href="#">Умови використання</a>
+		</div>
+		<div class="footer-links">
+			<a href="#">Instagram</a>
+			<a href="#">Telegram</a>
+			<a href="#">Viber</a>
+		</div>
+	</footer>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+    let cart = [];
+    const cartCountElement = document.getElementById('cart-count');
+    const cartItemsElement = document.getElementById('cart-items');
+    const clearCartButton = document.getElementById('clear-cart');
+    
+    // Функція оновлення відображення кошика
+    function updateCartDisplay() {
+        // Оновлюємо лічильник
+        cartCountElement.textContent = cart.length;
+        
+        // Оновлюємо вміст кошика
+        if (cart.length === 0) {
+            cartItemsElement.innerHTML = '<p>Ваш кошик порожній</p>';
+            clearCartButton.style.display = 'none';
+        } else {
+            let cartHTML = '<h3>Товари в кошику:</h3>';
+            let totalPrice = 0;
+            
+            cart.forEach((item, index) => {
+                cartHTML += `
+                    <div class="cart-item">
+                        <p><strong>${item.name}</strong> - ${item.price}</p>
+                        <button onclick="removeFromCart(${index})">Видалити</button>
+                    </div>
+                `;
+                // Видаляємо символи для обчислення загальної суми
+                const priceNumber = parseInt(item.price.replace(/\D/g, ''));
+                totalPrice += priceNumber;
+            });
+            
+            cartHTML += `<h4>Загальна сума: ${totalPrice}₴</h4>`;
+            cartItemsElement.innerHTML = cartHTML;
+            clearCartButton.style.display = 'block';
+        }
+    }
+    
+    // Функція додавання товару до кошика (робимо її глобальною)
+    window.addToCart = function(productName, productPrice, buttonElement) {
+        // Додаємо товар до кошика
+        cart.push({
+            name: productName,
+            price: productPrice
+        });
+        
+        // Оновлюємо відображення
+        updateCartDisplay();
+        
+        // Показуємо повідомлення
+        alert(`Товар "${productName}" додано до кошика!`);
+        
+        // Змінюємо кнопку
+        buttonElement.textContent = 'Додано в кошик';
+        buttonElement.style.backgroundColor = '#6c757d';
+        buttonElement.disabled = true;
+    };
+    
+    // Функція видалення товару з кошика
+    window.removeFromCart = function(index) {
+        cart.splice(index, 1);
+        updateCartDisplay();
+        
+        // Повертаємо кнопку "Купити" у початковий стан для відповідного товару
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            const productName = card.querySelector('h3').textContent;
+            if (cart.find(item => item.name === productName) === undefined) {
+                const button = card.querySelector('button');
+                button.textContent = 'Купити';
+                button.style.backgroundColor = '';
+                button.disabled = false;
+            }
+        });
+    };
+    
+    // Функція очищення кошика
+    window.clearCart = function() {
+        if (confirm('Ви впевнені, що хочете очистити кошик?')) {
+            cart = [];
+            updateCartDisplay();
+            
+            // Повертаємо всі кнопки "Купити" у початковий стан
+            const buttons = document.querySelectorAll('.product-card button');
+            buttons.forEach(button => {
+                button.textContent = 'Купити';
+                button.style.backgroundColor = '';
+                button.disabled = false;
+            });
+        }
+    };
+    
+    // Додаємо обробники подій для кнопок "Купити"
+    const buyButtons = document.querySelectorAll('.product-card button');
+    buyButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            const productCard = this.closest('.product-card');
+            const productName = productCard.querySelector('h3').textContent;
+            const productPrice = productCard.querySelector('.price').textContent;
+            
+            addToCart(productName, productPrice, this);
+        });
+    });
+    
+    // Додаємо обробник для кнопки "Очистити кошик"
+    clearCartButton.addEventListener('click', clearCart);
+    
+    // Обробка форми контактів
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            alert(`Дякуємо, ${name}!\nВаше повідомлення відправлено.\nМи відповімо на ${email} найближчим часом.`);
+            
+            this.reset();
+        });
+    }
+});
+// Пошук товарів
+const searchInput = document.createElement('input');
+searchInput.id = 'search';
+searchInput.type = 'text';
+searchInput.placeholder = 'Пошук товарів...';
+searchInput.style.cssText = 'padding: 10px; width: 300px; margin: 20px 0; border: 1px solid #ddd; border-radius: 4px;';
+
+const catalogSection = document.querySelector('#catalog');
+catalogSection.insertBefore(searchInput, document.querySelector('.products'));
+
+searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    const productCards = document.querySelectorAll('.product-card');
+    
+    productCards.forEach(card => {
+        const productName = card.querySelector('h3').textContent.toLowerCase();
+        const productDesc = card.querySelector('p').textContent.toLowerCase();
+        
+        if (productName.includes(searchTerm) || productDesc.includes(searchTerm)) {
+            card.style.display = 'inline-block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
+</body>
+</html>
+
+			
+			
